@@ -1,0 +1,34 @@
+Deta space:
+https://deta.space/
+https://deta.space/docs/en/build/quick-starts/python/
+https://deta.space/docs/en/build/fundamentals/space-cli
+https://deta.space/docs/en/build/guides/public-site/#:~:text=Making%20a%20Micro%20public,Micro%20you%20want%20to%20publicize.
+
+FastAPI:
+https://fastapi.tiangolo.com/
+https://fastapi.tiangolo.com/tutorial/query-params/
+https://www.tutorialspoint.com/fastapi/fastapi_openapi.htm
+https://www.youtube.com/watch?v=SORiTsvnU28&t=614s
+
+Virtual environment:
+https://www.freecodecamp.org/news/how-to-setup-virtual-environments-in-python/
+
+Base64 and URL encode decode online:
+https://base64.guru/converter/encode/image/jpg
+https://meyerweb.com/eric/tools/dencoder/
+
+Base64 and URL encode decode python:
+https://www.urldecoder.io/python/
+https://www.urlencoder.io/python/
+https://www.geeksforgeeks.org/python-convert-image-to-string-and-vice-versa/
+https://www.askpython.com/python/examples/decoding-base64-data
+
+ImageKit io SDK:
+https://imagekit.io/
+https://imagekit.io/dashboard/
+https://docs.imagekit.io/getting-started/quickstart-guides/python/python_app#setting-up-imagekit-python-sdk
+https://github.com/imagekit-samples/quickstart/blob/master/python/sample.py
+
+
+Command prompt:
+https://www3.ntu.edu.sg/home/ehchua/programming/howto/CMD_Survival.html#:~:text=To%20change%20current%20working%20directory,directory%20under%20the%20current%20drive.
