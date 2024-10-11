@@ -1,9 +1,3 @@
-Deta space:
-https://deta.space/
-https://deta.space/docs/en/build/quick-starts/python/
-https://deta.space/docs/en/build/fundamentals/space-cli
-https://deta.space/docs/en/build/guides/public-site/#:~:text=Making%20a%20Micro%20public,Micro%20you%20want%20to%20publicize.
-
 FastAPI:
 https://fastapi.tiangolo.com/
 https://fastapi.tiangolo.com/tutorial/query-params/

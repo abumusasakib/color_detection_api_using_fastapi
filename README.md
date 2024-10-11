@@ -1,48 +1,81 @@
-# color_detection_api_using_fastapi
+# Color Detection API Using FastAPI
 
-## Target acquisition through color tone detection in embedded settings via server off-loading
+## Target Acquisition Through Color Tone Detection in Embedded Settings with Server Off-Loading
 
-### Alternate title:
+### Alternate Title
+
 ## Utilizing Color Tone Analysis with Server-Based Processing for Target Detection in Embedded Environments
 
-This group project was by me along with my fellow batchmates and our respected trainer at Hypertag Solutions Ltd. The server is a FastAPI application hosted using Deta Space at `https://fastapi-1-g8913155.deta.app`. The main.py file is the code of the API, and the test.py makes API calls using the requests library.
+This group project was completed by me along with my fellow batchmates and our respected trainer at Hypertag Solutions Ltd. The server is a FastAPI application hosted locally for processing image data. The `main.py` file contains the code for the API, and `test.py` makes API calls using the `requests` library.
 
-Here's how the API works:
+## How the API Works
 
 1. Import necessary libraries and modules.
-2. Load an image using the PIL library.
+2. Load an image using the `PIL` library.
 3. Convert the image to a base64-encoded string.
-4. Optionally, compress the string using zlib.
+4. Optionally compress the string using `zlib`.
 5. URL encode the data.
-6. Send an HTTP GET request to the FastAPI server, including the encoded and compressed image data, as well as some parameters like target color and compression flag.
+6. Send an HTTP GET request to the FastAPI server running locally, including the encoded and compressed image data, as well as additional parameters like target color and compression flag.
 7. Print the length of the URL-encoded string and the JSON response from the server.
 
-# Synopsis:
+## Synopsis
 
-Our primary task here is to detect the location of a target by identifying its color within the image by using a color detection algorithm which runs on the server. We at first take the image data as input and pass it to the API using a GET request. We also take other parameters such as the RGB values of the target color, the color threshold (acceptable variations of the color), the box threshold (for adjusting the bounding box which highlights the target), and whether compressed image data is sent to the API. The image is passed to the API by either sending a base64 encoded string or by sending a zlib-compressed string. After the image is received by the API, the server processes the passed string and converts it to a binary image. Afterwards, an analysis is done to isolate the target color from the image; and after successful analysis the API returns the input image's information, and the boundary where the target was found.
+The primary task of this project is to detect the location of a target within an image by identifying its color using a server-based color detection algorithm. The image data is passed to the API via a GET request, along with parameters such as the RGB values of the target color, the color threshold (to account for acceptable variations in the color), the box threshold (which adjusts the bounding box that highlights the target), and a flag indicating whether the image data is compressed.
 
-# Color Detection API
+The image is either sent to the API as a base64-encoded string or compressed using `zlib`. After the API receives the image, it processes the string, converts it back into a binary image, and analyzes the data to isolate the target color. Upon successful analysis, the API returns the image’s information and the bounding box coordinates where the target color was detected.
 
-An API for detecting color from an image
+## Color Detection API
 
-**Base URL:** `https://fastapi-1-g8913155.deta.app`
+An API for detecting color from an image.
 
-## Process Image Data
+**Base URL:** `http://127.0.0.1:8000`
 
-### Endpoint: `/data`
+### Process Image Data
 
-#### GET /data
+#### Endpoint: `/data`
+
+##### GET /data
 
 - **Summary:** Process image data
-- **Description:** Endpoint for processing image data with specified parameters.
+- **Description:** This endpoint processes image data using specified parameters.
 
 ##### Parameters
 
-- `imageData` (query, required): Base64-encoded image data
-- `targetColorRed` (query, required): Red component of the target color
-- `targetColorGreen` (query, required): Green component of the target color
-- `targetColorBlue` (query, required): Blue component of the target color
-- `inputColorThreshold` (query, required): Threshold for input color
-- `boxThreshold` (query, required): Threshold for box
-- `compressed` (query, required): Flag indicating whether the image data is compressed
+- `imageData` (query, required): Base64-encoded image data.
+- `targetColorRed` (query, required): Red component of the target color.
+- `targetColorGreen` (query, required): Green component of the target color.
+- `targetColorBlue` (query, required): Blue component of the target color.
+- `inputColorThreshold` (query, required): Threshold for acceptable variations in the target color.
+- `boxThreshold` (query, required): Threshold for adjusting the bounding box around the target.
+- `compressed` (query, required): Flag indicating whether the image data is compressed.
 
+---
+
+### Running the Application Locally
+
+1. **Install dependencies:**
+   Ensure you have FastAPI and the necessary Python libraries installed.
+
+   ```bash
+   pip install fastapi uvicorn pillow numpy
+   ```
+
+   OR
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Run the FastAPI server:**
+   Start the FastAPI application locally.
+
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+3. **Make API requests:**
+   Use `test.py` to send image data to the API.
+
+   ```bash
+   python test.py
+   ```

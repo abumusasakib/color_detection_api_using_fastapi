@@ -1,3 +1,4 @@
+// launch.json
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -5,16 +6,35 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: FastAPI",
-            "type": "python",
+            "name": "Python: FastAPI (Dev)",
+            "type": "debugpy",
             "request": "launch",
-            "module": "uvicorn",
+            "program": "${workspaceFolder}/main.py",
             "args": [
+                "uvicorn",
                 "main:app",
                 "--reload"
             ],
             "jinja": true,
-            "justMyCode": true
+            "justMyCode": true,
+            "env": {
+                "ENVIRONMENT": "development"
+            }
+        },
+        {
+            "name": "Python: FastAPI (Prod)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "uvicorn",
+                "main:app"
+            ],
+            "jinja": true,
+            "justMyCode": true,
+            "env": {
+                "ENVIRONMENT": "production"
+            }
         }
     ]
 }
